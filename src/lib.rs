@@ -27,5 +27,5 @@ impl Graph {
     pub fn get_nodes(&self) -> JsValue { serde_wasm_bindgen::to_value(&self.nodes).unwrap() }
 
     pub fn add_edge(&mut self, edge: Edge) { self.edges.push(edge)}
-    pub fn get_edges(&self) -> JsValue { serde_wasm_bindgen::to_value(&self.edges).unwrap()}
+    pub fn get_edges(&self) -> JsValue { serde_wasm_bindgen::to_value(&self.edges).unwrap() }
 }
