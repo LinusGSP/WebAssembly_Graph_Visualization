@@ -28,4 +28,12 @@ impl Graph {
 
     pub fn add_edge(&mut self, edge: Edge) { self.edges.push(edge)}
     pub fn get_edges(&self) -> JsValue { serde_wasm_bindgen::to_value(&self.edges).unwrap() }
+
+    pub fn get_html(&self) -> JsValue {
+        let radius = 50;
+        let html = self.nodes.iter()
+            .map(|node| format!("<div style='width: {}px; height: {}px; border-radius: {}px; background-color: red; position: absolute; left: {}px; top: {}px; margin-top: -{}px; margin-left: -{}px;'></div>",
+            radius, radius, radius, node.pos.0, node.pos.1, radius/2, radius/2)).collect::<String>();
+        serde_wasm_bindgen::to_value(&html).unwrap()
+    }
 }

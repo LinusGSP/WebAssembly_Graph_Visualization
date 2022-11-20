@@ -4,7 +4,7 @@ use serde::{Serialize, Deserialize};
 #[derive(Serialize, Deserialize)]
 #[wasm_bindgen]
 pub struct Node {
-    pos: (f64, f64),
+    pub(crate) pos: (f64, f64),
     id: u16,
     label: String,
 }
