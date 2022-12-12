@@ -15,7 +15,6 @@ impl Node {
         let label = label.unwrap_or(id.to_string());
         Node {  pos: (x, y), id, label }
     }
-
     pub fn get_pos(&self) -> JsValue {
         serde_wasm_bindgen::to_value(&self.pos).unwrap()
     }
